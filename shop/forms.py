@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,BooleanField,SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from wtforms import StringField,PasswordField,BooleanField,SubmitField, TextAreaField
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 
 from shop.models import User
 
@@ -27,4 +27,6 @@ class RegisterForn(FlaskForm):
         if user is not None:
             raise ValidationError('Pleasr use diffence email address')
 
-    
+class EditProfileForm(FlaskForm):
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=120)])
+    submit = SubmitField('Save')
