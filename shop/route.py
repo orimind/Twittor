@@ -1,9 +1,8 @@
-from wsgiref import validate
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user, current_user, logout_user, login_required
-from shop import forms
-from shop.forms import LoginForm
-from shop.models import User , Tweet
+from shop.forms import LoginForm, RegisterForn
+from shop.models import User, Tweet, load_user
+from shop import db
 
 @login_required
 def index():
@@ -29,12 +28,26 @@ def login():
             print('invaild username or password')
             return redirect(url_for('login'))
         login_user(u, remember=form.remember_me.data)
+
         next_page = request.args.get('next')
         if next_page:
             return redirect(next_page)
+            
         return redirect(url_for('index'))
-    return render_template('login.html',form = form)
+    return render_template('login.html', title = 'Login',form = form)
 
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegisterForn()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('register.html', title = 'Register', form = form)

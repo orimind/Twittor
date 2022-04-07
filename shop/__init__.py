@@ -9,7 +9,7 @@ migrate = Migrate()
 login_manager = LoginManager()
 login_manager.login_view = 'login'
 
-from shop.route import index , login, logout
+from shop.route import index , login, logout, register
 
 def creat_app():
     app = Flask(__name__)
@@ -20,4 +20,5 @@ def creat_app():
     app.add_url_rule('/', 'index', index)
     app.add_url_rule('/login', 'login' ,login,methods=['GET','POST'])
     app.add_url_rule('/logout', 'logout', logout)
+    app.add_url_rule('/register', 'register', register, methods=['GET','POST'])
     return app
