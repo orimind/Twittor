@@ -1,0 +1,17 @@
+<table>
+{% for tweet in tweets %}
+
+    <tr valign="top">
+        <td><img src="{{ tweet.author.avatar(48) }}" alt=""></td>
+        <td>
+            <b>
+                <a href="{{ url_for('profile', username = tweet.author.username) }}">{{ tweet.author.username }}</a>
+            </b> 
+            {{ tweet.create_time }}<br>
+            {{ tweet.body }}
+        </td>
+    </tr>
+
+{% endfor %}
+</table>
+
