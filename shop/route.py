@@ -4,7 +4,8 @@ from flask import render_template, redirect, url_for, request, abort, current_ap
 from flask_login import login_user, current_user, logout_user, login_required
 from shop.email import send_email
 from shop.forms import LoginForm, RegisterForn, EditProfileForm, TweetForm, PassWordResetRequsetForm, PasswordResetForm
-from shop.models import User, Tweet, load_user
+from shop.models.user import User, load_user
+from shop.models.tweet import Tweet
 from shop import db
 
 @login_required
