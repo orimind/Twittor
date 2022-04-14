@@ -25,4 +25,4 @@
 ![image](https://user-images.githubusercontent.com/38405117/163378249-299cc01f-f0ed-459e-8930-c72629d44491.png)
 
 
-部屬平台選擇Heroku，WGSI選擇gunicorn。
+部屬平台選擇Heroku，利用git建構專案，並運用Heroku上的ClearDB(Mysql)作為線上的資料庫，WGSI選擇gunicorn。
