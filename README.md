@@ -20,4 +20,9 @@
 
 ![image](https://user-images.githubusercontent.com/38405117/163376644-95b54c7d-b0f2-4279-b98f-54a25ac94d81.png)
 
+當用戶忘記密碼時，可以輸入email地址獲得重設密碼的信(當email未註冊時會提示用戶未註冊)
+
+![image](https://user-images.githubusercontent.com/38405117/163378249-299cc01f-f0ed-459e-8930-c72629d44491.png)
+
+
 部屬平台選擇Heroku，WGSI選擇gunicorn。
