@@ -16,7 +16,7 @@
 
 ![image](https://user-images.githubusercontent.com/38405117/163374858-c4f23611-e582-419d-bc0e-4a1a226a4c32.png)
 
-在mysql中儲存3張Table，user儲存用戶的基本資料，tweet儲存用戶發文，follower則是利用外部鍵儲存前兩張Table的關係。已達成在首頁顯示自己和已追蹤用戶的發文。
+在mysql中儲存3張Table，user儲存用戶的基本資料，tweet儲存用戶發文，follower則是利用外部鍵儲存前兩張Table的關係。以達成在首頁顯示自己和已追蹤用戶的發文。
 
 ![image](https://user-images.githubusercontent.com/38405117/163376644-95b54c7d-b0f2-4279-b98f-54a25ac94d81.png)
 
