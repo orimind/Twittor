@@ -11,7 +11,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'login'
 mail = Mail()
 
-from shop.route import index , login, logout, password_reset, register, reset_password_request, user, page_not_found, edit_profile
+from shop.route import index , login, logout, password_reset, register, reset_password_request, user, page_not_found, edit_profile, explore
 
 def creat_app():
     app = Flask(__name__)
@@ -28,5 +28,6 @@ def creat_app():
     app.add_url_rule('/edit_profile', 'edit_profile', edit_profile, methods=['GET','POST'])
     app.add_url_rule('/reset_password_request','reset_password_request',reset_password_request, methods=['GET','POST'])
     app.add_url_rule('/password_reset/<token>', 'password_reset', password_reset, methods=['GET','POST'])
+    app.add_url_rule('/explore', 'explore', explore)
     app.register_error_handler(404, page_not_found)
     return app

@@ -6,7 +6,7 @@ class Config():
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "sqlite:///" + os.path.join(config_path, 'shop.db'))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'abc123'
-    TWEET_PRE_PAGE = 4
+    TWEET_PRE_PAGE = 20
 
     MAIL_DEFAULT_SENDER = 'noreply@twittor.com'
     MAIL_SERVER = 'smtp.gmail.com'
